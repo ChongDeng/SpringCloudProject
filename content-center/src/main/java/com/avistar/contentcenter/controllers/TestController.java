@@ -21,10 +21,10 @@ public class TestController {
         Share share = new Share();
         share.setCreateTime(new Date());
         share.setUpdateTime(new Date());
-        share.setTitle("spring");
-        share.setCover("Cool");
-        share.setAuthor("fqyang");
-        share.setBuyCount(5);
+        share.setTitle("C++");
+        share.setCover("Great, but waste time");
+        share.setAuthor("scut");
+        share.setBuyCount(2);
 
         shareMapper.insertSelective(share);
 

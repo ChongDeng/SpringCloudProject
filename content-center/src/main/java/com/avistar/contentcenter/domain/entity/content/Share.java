@@ -2,13 +2,13 @@ package com.avistar.contentcenter.domain.entity.content;
 
 import java.util.Date;
 import javax.persistence.*;
+
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
-@ToString
+@Data
 @Table(name = "share")
 public class Share {
     /**
