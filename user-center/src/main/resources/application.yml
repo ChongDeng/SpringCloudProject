@@ -21,5 +21,12 @@ spring:
           namespace: 1c84dc67-f4dd-4fa6-a647-9ebe8d886de8
           # 指定集群名称
           cluster-name: USA
+
+ribbon:
+  #开启饥饿加载: 在启动的时候便加载所有配置项的应用程序上下文
+  eager-load:
+    enabled: true
+    clients: user-center
+
 server:
   port: 8081
