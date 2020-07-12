@@ -24,6 +24,9 @@ public class ShareService {
     @Autowired
     private ShareMapper shareMapper;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     public ShareDTO findById(Integer id) {
         // 获取分享详情
         Share share = this.shareMapper.selectByPrimaryKey(id);
@@ -32,7 +35,6 @@ public class ShareService {
         Integer userId = share.getUserId();
 
 
-        RestTemplate restTemplate = new RestTemplate();
         // HTTP GET; User类能自动换砖为UserDTO类！！！
         UserDTO userDTO = restTemplate.getForObject(
                 "http://localhost:8081/users/{id}",
