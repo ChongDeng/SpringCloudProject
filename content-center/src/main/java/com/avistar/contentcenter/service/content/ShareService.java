@@ -2,7 +2,9 @@ package com.avistar.contentcenter.service.content;
 
 
 import com.avistar.contentcenter.dao.content.ShareMapper;
+import com.avistar.contentcenter.domain.dto.content.ShareDTO;
 import com.avistar.contentcenter.domain.entity.content.Share;
+import com.avistar.usercenter.domain.dto.user.UserDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -22,12 +24,20 @@ public class ShareService {
     @Autowired
     private ShareMapper shareMapper;
 
-    public Share findById(Integer id) {
+    public ShareDTO findById(Integer id) {
         // 获取分享详情
         Share share = this.shareMapper.selectByPrimaryKey(id);
 
         // 发布人id
         Integer userId = share.getUserId();
+
+
+        RestTemplate restTemplate = new RestTemplate();
+        // HTTP GET; User类能自动换砖为UserDTO类！！！
+        UserDTO userDTO = restTemplate.getForObject(
+                "http://localhost:8081/users/{id}",
+                UserDTO.class, 1
+        );
 
         return  null;
     }
