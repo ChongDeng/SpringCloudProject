@@ -13,10 +13,14 @@ spring:
     name: content-center
 
   cloud:
-      nacos:
-        discovery:
-          # 指定nacos server的地址
-          server-addr: localhost:8848
+    nacos:
+      discovery:
+        # 指定nacos server的地址
+        server-addr: localhost:8848
+        # 指定namespace
+        namespace: 1c84dc67-f4dd-4fa6-a647-9ebe8d886de8
+        # 指定集群名称
+        cluster-name: USA
 
 
 server:
