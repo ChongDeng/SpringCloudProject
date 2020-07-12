@@ -1,4 +1,4 @@
-package com.avistar.usercenter.configuration;
+package com.avistar.contentcenter.configuration;
 
 import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.api.naming.NamingService;

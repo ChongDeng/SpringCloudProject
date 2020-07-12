@@ -28,5 +28,10 @@ ribbon:
     enabled: true
     clients: content-center
 
+
+user-center:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.avistar.contentcenter.configuration.NacosWeightedRule
+
 server:
   port: 8082
