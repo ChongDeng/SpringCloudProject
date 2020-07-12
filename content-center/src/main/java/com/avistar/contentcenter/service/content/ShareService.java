@@ -37,7 +37,7 @@ public class ShareService {
 
         // HTTP GET; User类能自动换砖为UserDTO类！！！
         UserDTO userDTO = restTemplate.getForObject(
-                "http://localhost:8081/users/{id}",
+                "http://user-center/users/{id}",
                 UserDTO.class, 1
         );
 
