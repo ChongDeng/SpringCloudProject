@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>user-center</module>
+        <module>content-center</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
