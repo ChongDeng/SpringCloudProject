@@ -29,7 +29,7 @@ public class ShareService {
 
     public ShareDTO findById(Integer id) {
         // 获取分享详情
-        Share share = this.shareMapper.selectByPrimaryKey(id);
+        Share share = shareMapper.selectByPrimaryKey(id);
 
         // 发布人id
         Integer userId = share.getUserId();
@@ -41,7 +41,12 @@ public class ShareService {
                 UserDTO.class, 1
         );
 
-        return  null;
+        ShareDTO shareDTO = new ShareDTO();
+        // 消息的装配
+        BeanUtils.copyProperties(share, shareDTO);
+        shareDTO.setWxNickname(userDTO.getWxNickname());
+
+        return shareDTO;
     }
 
     public static void main(String[] args) {
