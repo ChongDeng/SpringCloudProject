@@ -12,5 +12,12 @@ spring:
     # 服务名称尽量用-，不要用_，不要用特殊字符
     name: content-center
 
+  cloud:
+      nacos:
+        discovery:
+          # 指定nacos server的地址
+          server-addr: localhost:8848
+
+
 server:
   port: 8082
