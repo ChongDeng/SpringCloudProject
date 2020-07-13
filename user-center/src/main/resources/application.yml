@@ -28,5 +28,10 @@ ribbon:
     enabled: true
     clients: user-center
 
+jwt:
+  secret: aaaaaaabbbbbbcccccdddddaaaaaaabbbbbbcccccdddddaaaaaaabbbbbbcccccddddd
+  # 有效期，单位秒，默认2周
+  expire-time-in-second: 1209600
+
 server:
   port: 8081
