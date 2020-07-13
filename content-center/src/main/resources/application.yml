@@ -38,6 +38,12 @@ logging:
   level:
     com.avistar.contentcenter.feignclient.UserCenterFeignClient: debug
 
+feign:
+  client:
+    config:
+      # 全局配置
+      default:
+        loggerLevel: full
 
 server:
   port: 8082
