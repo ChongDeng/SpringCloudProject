@@ -33,5 +33,11 @@ user-center:
   ribbon:
     NFLoadBalancerRuleClassName: com.avistar.contentcenter.configuration.NacosWeightedRule
 
+
+logging:
+  level:
+    com.avistar.contentcenter.feignclient.UserCenterFeignClient: debug
+
+
 server:
   port: 8082
