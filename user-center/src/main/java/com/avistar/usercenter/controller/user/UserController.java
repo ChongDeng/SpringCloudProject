@@ -1,5 +1,6 @@
 package com.avistar.usercenter.controller.user;
 
+import com.avistar.usercenter.auth.CheckLogin;
 import com.avistar.usercenter.domain.dto.user.JwtTokenRespDTO;
 import com.avistar.usercenter.domain.dto.user.LoginRespDTO;
 import com.avistar.usercenter.domain.dto.user.UserLoginDTO;
@@ -26,6 +27,7 @@ public class UserController {
     private final JwtOperator jwtOperator;
 
     @GetMapping("/{id}")
+    @CheckLogin
     public User findById(@PathVariable Integer id) {
         log.info("我被请求了...");
         return userService.findById(id);
@@ -72,4 +74,17 @@ public class UserController {
                 )
                 .build();
     }
+
+    /**
+     * 模拟生成token(假的登录)
+     */
+    @GetMapping("/genToken")
+    public String genToken() {
+        Map<String, Object> userInfo = new HashMap<>(3);
+        userInfo.put("id", 1);
+        userInfo.put("wxNickname", "fqyang");
+        userInfo.put("role", "admin");
+        return jwtOperator.generateToken(userInfo);
+    }
+
 }
