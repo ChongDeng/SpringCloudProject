@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
+        namespace: 1c84dc67-f4dd-4fa6-a647-9ebe8d886de8
+  application:
+    name: content-center
+  profiles:
+    active: dev
