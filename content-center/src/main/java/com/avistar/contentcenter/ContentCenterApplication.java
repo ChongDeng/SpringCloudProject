@@ -1,5 +1,6 @@
 package com.avistar.contentcenter;
 
+import com.avistar.contentcenter.resttemplate.interceptor.RestTemplateTokenRelayInterceptor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -25,7 +26,13 @@ public class ContentCenterApplication {
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
-        return new RestTemplate();
+        RestTemplate template = new RestTemplate();
+        template.setInterceptors(
+                Collections.singletonList(
+                        new RestTemplateTokenRelayInterceptor()
+                )
+        );
+        return template;
     }
 
 }
