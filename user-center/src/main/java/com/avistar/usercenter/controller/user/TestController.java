@@ -15,6 +15,9 @@ import java.util.Date;
 @RefreshScope
 public class TestController {
 
+    @Autowired
+    private UserMapper userMapper;
+
     @Value("${scut.location}")
     private String scutLocation;
 
@@ -23,9 +26,13 @@ public class TestController {
         return this.scutLocation;
     }
 
+    @Value("${ext_val.name}")
+    private String ext;
 
-    @Autowired
-    private UserMapper userMapper;
+    @GetMapping("/ext")
+    public String ext() {
+        return this.ext;
+    }
 
     @RequestMapping("/test")
     public User test()

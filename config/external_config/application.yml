@@ -34,7 +34,7 @@ jwt:
   expire-time-in-second: 1209600
 
 ext_val:
-  name: "chris"
+  name: "scut"
 
 
 server:
