@@ -3,13 +3,26 @@ package com.avistar.usercenter.controller.user;
 import com.avistar.usercenter.dao.user.UserMapper;
 import com.avistar.usercenter.domain.entity.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 
 @RestController
+@RefreshScope
 public class TestController {
+
+    @Value("${scut.location}")
+    private String scutLocation;
+
+    @GetMapping("/location")
+    public String scutLocation() {
+        return this.scutLocation;
+    }
+
 
     @Autowired
     private UserMapper userMapper;

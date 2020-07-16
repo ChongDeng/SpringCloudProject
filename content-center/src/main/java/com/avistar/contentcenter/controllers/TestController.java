@@ -25,6 +25,14 @@ public class TestController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Value("${scut.location}")
+    private String scutLocation;
+
+    @GetMapping("/location")
+    public String scutLocation() {
+        return this.scutLocation;
+    }
+
     @Value("${scut.config}")
     private String scutConfig;
 

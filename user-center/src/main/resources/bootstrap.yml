@@ -12,6 +12,6 @@ spring:
         refreshable-dataids: common1.yaml
 
   application:
-    name: content-center
+    name: user-center
   profiles:
     active: dev
