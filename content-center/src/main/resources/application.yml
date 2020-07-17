@@ -12,6 +12,15 @@ spring:
     # 服务名称尽量用-，不要用_，不要用特殊字符
     name: content-center
 
+  zipkin:
+      base-url: http://localhost:9411/
+      discoveryClientEnabled: false
+  sleuth:
+      sampler:
+        # 抽样率，默认是0.1（10%）
+        probability: 1.0
+
+
   cloud:
     nacos:
       discovery:
@@ -51,6 +60,13 @@ feign:
     max-connections: 200
     # feign单个路径的最大连接数
     max-connections-per-route: 50
+  zipkin:
+    base-url: http://localhost:9411/
+    discoveryClientEnabled: false
+  sleuth:
+    sampler:
+      # 抽样率，默认是0.1（10%）
+      probability: 1.0
 
 
 jwt:

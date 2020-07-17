@@ -22,6 +22,14 @@ spring:
           # 指定集群名称
           cluster-name: USA
 
+  zipkin:
+      base-url: http://localhost:9411/
+      discoveryClientEnabled: false
+  sleuth:
+      sampler:
+          # 抽样率，默认是0.1（10%）
+          probability: 1.0
+
 ribbon:
   #开启饥饿加载: 在启动的时候便加载所有配置项的应用程序上下文
   eager-load:
