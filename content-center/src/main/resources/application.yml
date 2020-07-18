@@ -31,6 +31,11 @@ spring:
         # 指定集群名称
         cluster-name: USA
 
+    sentinel:
+          transport:
+            # 指定sentinel 控制台的地址
+            dashboard: localhost:8080
+
 ribbon:
   #开启饥饿加载: 在启动的时候便加载所有配置项的应用程序上下文
   eager-load:
