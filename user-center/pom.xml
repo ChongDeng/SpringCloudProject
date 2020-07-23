@@ -11,7 +11,9 @@
 
     <artifactId>user-center</artifactId>
 
-
+    <properties>
+        <main-class>com.avistar.usercenter.UserCenterApplication</main-class>
+    </properties>
 
     <dependencies>
 
@@ -125,6 +127,21 @@
                         <version>4.1.5</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${main-class}</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <!-- Docker maven plugin -->

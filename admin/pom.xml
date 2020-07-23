@@ -11,6 +11,9 @@
 
     <artifactId>admin</artifactId>
 
+    <properties>
+        <main-class>com.avistar.admin.AdminApplication</main-class>
+    </properties>
 
     <dependencies>
 
@@ -34,6 +37,22 @@
 
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${main-class}</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!-- Docker maven plugin -->
             <plugin>
                 <groupId>com.spotify</groupId>
