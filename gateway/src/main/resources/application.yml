@@ -7,9 +7,9 @@ spring:
     nacos:
       discovery:
           # 指定nacos server的地址
-          server-addr: localhost:8848
+          server-addr: http://64.62.166.177:8848
           # 指定namespace
-          namespace: 1c84dc67-f4dd-4fa6-a647-9ebe8d886de8
+          namespace: dev
           # 指定集群名称
           cluster-name: USA
     gateway:
