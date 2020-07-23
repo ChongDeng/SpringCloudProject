@@ -11,6 +11,10 @@
 
     <artifactId>gateway</artifactId>
 
+    <properties>
+        <main-class>com.avistar.gateway.GatewayApplication</main-class>
+    </properties>
+
     <dependencies>
 
         <dependency>
@@ -55,6 +59,14 @@
                 </configuration>
             </plugin>
             <!-- Docker maven plugin -->
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${main-class}</mainClass>
+                </configuration>
+            </plugin>
 
         </plugins>
     </build>
