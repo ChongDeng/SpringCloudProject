@@ -62,3 +62,7 @@ ext_val:
 
 server:
   port: 8081
+
+scut:
+  location: gz
+  config: mem
