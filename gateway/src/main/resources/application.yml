@@ -9,7 +9,7 @@ spring:
           # 指定nacos server的地址
           server-addr: 64.62.166.177:8848
           # 指定namespace
-          namespace: dev
+          namespace: dev_id
           # 指定集群名称
           cluster-name: USA
     gateway:
