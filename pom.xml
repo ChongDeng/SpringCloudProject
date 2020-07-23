@@ -23,7 +23,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<docker.image.prefix>ConxApp</docker.image.prefix>
+		<docker.image.prefix>cloud_app</docker.image.prefix>
 	</properties>
 
 	<dependencyManagement>
