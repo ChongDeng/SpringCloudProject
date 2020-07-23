@@ -46,8 +46,8 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-<!--                    <mainClass>${main-class}</mainClass>-->
-                   <includeSystemScope>true</includeSystemScope>
+                    <mainClass>${main-class}</mainClass>
+<!--                   <includeSystemScope>true</includeSystemScope>-->
                 </configuration>
                 <executions>
                     <execution>
