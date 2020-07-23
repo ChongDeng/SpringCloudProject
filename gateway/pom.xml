@@ -46,7 +46,8 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>${main-class}</mainClass>
+<!--                    <mainClass>${main-class}</mainClass>-->
+                   <includeSystemScope>true</includeSystemScope>
                 </configuration>
                 <executions>
                     <execution>
@@ -56,7 +57,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
             <!-- Docker maven plugin -->
             <plugin>
                 <groupId>com.spotify</groupId>
