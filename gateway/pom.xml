@@ -42,6 +42,32 @@
     <build>
         <plugins>
 
+            <!-- Docker maven plugin -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${docker.maven.plugin}</version>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>activation</artifactId>
+                        <version>1.1.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <!-- Docker maven plugin -->
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -57,24 +83,15 @@
                 </executions>
             </plugin>
 
-            <!-- Docker maven plugin -->
+
             <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
+                    <source>10</source>
+                    <target>10</target>
                 </configuration>
             </plugin>
-            <!-- Docker maven plugin -->
 
         </plugins>
     </build>
