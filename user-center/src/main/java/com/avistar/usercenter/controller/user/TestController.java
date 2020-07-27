@@ -18,6 +18,11 @@ public class TestController {
     @Autowired
     private UserMapper userMapper;
 
+    @GetMapping("/env")
+    public String env() {
+        return "prod env";
+    }
+
     @Value("${scut.location}")
     private String scutLocation;
 
