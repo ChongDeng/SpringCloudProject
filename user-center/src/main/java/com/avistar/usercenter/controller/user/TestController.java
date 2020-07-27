@@ -20,7 +20,7 @@ public class TestController {
 
     @GetMapping("/env")
     public String env() {
-        return "dev env";
+        return "dev env v2!";
     }
     
     @Value("${scut.location}")
