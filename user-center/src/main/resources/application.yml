@@ -1,3 +1,7 @@
+server:
+  port: 8081
+
+---
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/user-center?serverTimezone=UTC
@@ -42,10 +46,6 @@ management:
 
 ext_val:
   name: "chris"
-
-
-server:
-  port: 8081
 
 scut:
   location: gz

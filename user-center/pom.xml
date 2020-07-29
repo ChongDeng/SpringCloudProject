@@ -13,6 +13,7 @@
 
     <properties>
         <main-class>com.avistar.usercenter.UserCenterApplication</main-class>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -161,15 +162,7 @@
                 <configuration>
                     <mainClass>${main-class}</mainClass>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
-
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -226,7 +219,7 @@
                 <nacos.config.server.addr>64.62.166.177:8848</nacos.config.server.addr>
                 <nacos.config.cluster.name>USA</nacos.config.cluster.name>
                 <nacos.discovery.server.addr>64.62.166.177:8848</nacos.discovery.server.addr>
-                <nacos.namespace>dev_id</nacos.namespace>
+                <nacos.namespace>935b9d3b-25f4-46ad-83db-d642d9dcb3b4</nacos.namespace>
                 <sentinel.transport.dashboard>localhost:8080</sentinel.transport.dashboard>
             </properties>
         </profile>
@@ -237,7 +230,7 @@
                 <nacos.config.server.addr>64.62.166.177:8848</nacos.config.server.addr>
                 <nacos.config.cluster.name>USA</nacos.config.cluster.name>
                 <nacos.discovery.server.addr>64.62.166.177:8848</nacos.discovery.server.addr>
-                <nacos.namespace>dev_id</nacos.namespace>
+                <nacos.namespace>prod_id</nacos.namespace>
                 <sentinel.transport.dashboard>localhost:8080</sentinel.transport.dashboard>
             </properties>
         </profile>

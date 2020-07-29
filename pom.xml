@@ -9,8 +9,6 @@
 		<module>gateway</module>
         <module>admin</module>
 		<module>provider-center</module>
-		<module>provider-api</module>
-		<module>provider-api</module>
 		<module>consumer-center</module>
 	</modules>
     <parent>

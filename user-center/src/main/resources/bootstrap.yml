@@ -22,7 +22,7 @@ spring:
         # server-addr: localhost:8848
         server-addr: @nacos.discovery.server.addr@
         file-extension: yaml
-        group: DEFAULT_GROUP
+        group: @parent.artifactId@
         #namespace: 1c84dc67-f4dd-4fa6-a647-9ebe8d886de8
         namespace: @nacos.namespace@
 
