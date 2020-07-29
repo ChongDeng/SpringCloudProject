@@ -5,18 +5,14 @@ import com.avistar.contentcenter.dao.content.ShareMapper;
 import com.avistar.contentcenter.domain.dto.content.ShareDTO;
 import com.avistar.contentcenter.domain.entity.content.Share;
 import com.avistar.contentcenter.feignclient.UserCenterFeignClient;
-import com.avistar.usercenter.domain.dto.user.UserDTO;
+import com.avistar.user.domain.dto.user.UserDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.Objects;
-import java.util.UUID;
 
 @Slf4j
 @Service

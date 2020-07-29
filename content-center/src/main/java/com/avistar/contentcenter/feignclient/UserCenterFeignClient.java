@@ -1,7 +1,6 @@
 package com.avistar.contentcenter.feignclient;
 
-import com.avistar.contentcenter.configuration.UserCenterlFeignConfiguration;
-import com.avistar.usercenter.domain.dto.user.UserDTO;
+import com.avistar.user.domain.dto.user.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

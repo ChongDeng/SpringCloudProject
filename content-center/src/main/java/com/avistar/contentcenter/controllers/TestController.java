@@ -2,7 +2,7 @@ package com.avistar.contentcenter.controllers;
 
 import com.avistar.contentcenter.dao.content.ShareMapper;
 import com.avistar.contentcenter.domain.entity.content.Share;
-import com.avistar.usercenter.domain.dto.user.UserDTO;
+import com.avistar.user.domain.dto.user.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
