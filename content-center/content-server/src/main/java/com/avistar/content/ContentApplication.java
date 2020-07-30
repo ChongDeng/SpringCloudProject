@@ -14,7 +14,7 @@ import java.util.Collections;
 //扫描mybatis哪些包里面的接口
 @MapperScan("com.avistar.content.dao")
 @EnableFeignClients
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages={"com.avistar.content", "com.avistar.auth"})
 public class ContentApplication {
 
     public static void main(String[] args) {
