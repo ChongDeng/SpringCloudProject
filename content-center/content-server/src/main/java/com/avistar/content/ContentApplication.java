@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
 import tk.mybatis.spring.annotation.MapperScan;
 
@@ -13,8 +14,9 @@ import java.util.Collections;
 
 //扫描mybatis哪些包里面的接口
 @MapperScan("com.avistar.content.dao")
-@EnableFeignClients
-@SpringBootApplication(scanBasePackages={"com.avistar.content", "com.avistar.auth"})
+@EnableFeignClients(basePackages = {"com.avistar"})
+@SpringBootApplication
+@ComponentScan(basePackages = {"com.avistar"})
 public class ContentApplication {
 
     public static void main(String[] args) {

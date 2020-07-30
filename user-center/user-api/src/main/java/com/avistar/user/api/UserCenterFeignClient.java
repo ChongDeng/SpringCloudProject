@@ -1,4 +1,4 @@
-package com.avistar.content.feignclient;
+package com.avistar.user.api;
 
 import com.avistar.user.dto.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;

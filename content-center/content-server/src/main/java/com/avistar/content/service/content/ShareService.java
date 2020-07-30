@@ -4,7 +4,7 @@ package com.avistar.content.service.content;
 import com.avistar.content.dao.content.ShareMapper;
 import com.avistar.content.domain.dto.content.ShareDTO;
 import com.avistar.content.domain.entity.content.Share;
-import com.avistar.content.feignclient.UserCenterFeignClient;
+import com.avistar.user.api.UserCenterFeignClient;
 import com.avistar.user.dto.UserDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
