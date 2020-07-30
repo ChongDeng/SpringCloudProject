@@ -1,6 +1,5 @@
-package com.avistar.user.auth;
+package com.avistar.auth;
 
-import com.avistar.user.util.JwtOperator;
 import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -22,7 +21,7 @@ public class AuthAspect {
     private final JwtOperator jwtOperator;
 
     //这是AOP中的一种Advice
-    @Around("@annotation(com.avistar.user.auth.CheckLogin)")
+    @Around("@annotation(com.avistar.auth.CheckLogin)")
     public Object checkLogin(ProceedingJoinPoint point) throws Throwable {
         checkToken();
         return point.proceed();

@@ -1,13 +1,13 @@
 package com.avistar.user.controller.user;
 
-import com.avistar.user.auth.CheckLogin;
+import com.avistar.auth.CheckLogin;
+import com.avistar.auth.JwtOperator;
 import com.avistar.user.domain.entity.user.User;
 import com.avistar.user.dto.JwtTokenRespDTO;
 import com.avistar.user.dto.LoginRespDTO;
 import com.avistar.user.dto.UserLoginDTO;
 import com.avistar.user.dto.UserRespDTO;
 import com.avistar.user.service.user.UserService;
-import com.avistar.user.util.JwtOperator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

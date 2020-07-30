@@ -9,7 +9,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 //扫描mybatis哪些包里面的接口
 @MapperScan("com.avistar.user.dao")
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages={"com.avistar.user", "com.avistar.auth"})
 public class UserApplication {
 
     public static void main(String[] args) {

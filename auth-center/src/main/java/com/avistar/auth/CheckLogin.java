@@ -1,4 +1,4 @@
-package com.avistar.user.auth;
+package com.avistar.auth;
 
 public @interface CheckLogin {
 }

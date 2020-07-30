@@ -1,4 +1,4 @@
-package com.avistar.user.util;
+package com.avistar.auth;
 
 import com.google.common.collect.Maps;
 import io.jsonwebtoken.*;
