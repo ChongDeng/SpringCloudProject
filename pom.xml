@@ -10,6 +10,8 @@
         <module>admin</module>
 		<module>provider-center</module>
 		<module>consumer-center</module>
+        <module>common</module>
+		<module>auth-center</module>
 	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
