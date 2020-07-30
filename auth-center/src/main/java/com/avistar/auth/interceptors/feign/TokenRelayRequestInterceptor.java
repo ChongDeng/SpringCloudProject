@@ -1,4 +1,4 @@
-package com.avistar.content.feignclient.interceptor;
+package com.avistar.auth.interceptors.feign;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
