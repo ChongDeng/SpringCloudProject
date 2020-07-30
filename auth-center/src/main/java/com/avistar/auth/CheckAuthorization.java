@@ -1,4 +1,4 @@
-package com.avistar.content.auth;
+package com.avistar.auth;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

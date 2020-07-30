@@ -1,7 +1,7 @@
 package com.avistar.content.controller.content;
 
-import com.avistar.content.auth.CheckAuthorization;
-import com.avistar.content.auth.CheckLogin;
+import com.avistar.auth.CheckAuthorization;
+import com.avistar.auth.CheckLogin;
 import com.avistar.content.domain.dto.content.ShareDTO;
 import com.avistar.content.service.content.ShareService;
 import lombok.RequiredArgsConstructor;

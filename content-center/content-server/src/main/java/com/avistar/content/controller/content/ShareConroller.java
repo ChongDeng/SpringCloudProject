@@ -1,8 +1,8 @@
 package com.avistar.content.controller.content;
 
+import com.avistar.auth.CheckLogin;
 import com.avistar.content.domain.dto.content.ShareDTO;
 import com.avistar.content.service.content.ShareService;
-import com.avistar.content.auth.CheckLogin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
