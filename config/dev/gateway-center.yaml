@@ -15,12 +15,12 @@ spring:
           enabled: true
 
   zipkin:
-      base-url: http://localhost:9411/
-      discoveryClientEnabled: false
+    base-url: http://localhost:9411/
+    discoveryClientEnabled: false
   sleuth:
-      sampler:
-        # 抽样率，默认是0.1（10%）
-        probability: 1.0
+    sampler:
+      # 抽样率，默认是0.1（10%）
+      probability: 1.0
 
 
 management:
@@ -31,5 +31,3 @@ management:
   endpoint:
     health:
       show-details: always
-
-

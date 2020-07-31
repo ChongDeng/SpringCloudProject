@@ -13,6 +13,7 @@
 
     <properties>
         <main-class>com.avistar.admin.AdminApplication</main-class>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -70,13 +71,6 @@
                 <configuration>
                     <mainClass>${main-class}</mainClass>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
 
