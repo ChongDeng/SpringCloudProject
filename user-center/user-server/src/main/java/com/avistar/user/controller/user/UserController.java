@@ -10,6 +10,8 @@ import com.avistar.user.dto.UserRespDTO;
 import com.avistar.user.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +23,9 @@ import java.util.Map;
 @Slf4j
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     private UserService userService;
 
@@ -29,13 +34,15 @@ public class UserController {
     @GetMapping("/{id}")
     @CheckLogin
     public User findById(@PathVariable Integer id) {
-        log.info("我被请求了...");
+        LOGGER.info("/id invoked");
+        //log.info("我被请求了...");
         return userService.findById(id);
     }
 
     @PostMapping("/login")
     public LoginRespDTO login(@RequestBody UserLoginDTO loginDTO) {
 
+        LOGGER.info("/login invoked");
 
         // 看用户是否注册，如果没有注册就（插入）
         // 如果已经注册
@@ -80,6 +87,8 @@ public class UserController {
      */
     @GetMapping("/genToken")
     public String genToken() {
+        LOGGER.info("/genToken invoked");
+
         Map<String, Object> userInfo = new HashMap<>(3);
         userInfo.put("id", 1);
         userInfo.put("wxNickname", "fqyang");

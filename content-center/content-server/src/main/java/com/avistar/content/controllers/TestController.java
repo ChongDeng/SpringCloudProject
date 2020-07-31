@@ -3,6 +3,8 @@ package com.avistar.content.controllers;
 import com.avistar.content.dao.content.ShareMapper;
 import com.avistar.content.domain.entity.content.Share;
 import com.avistar.user.dto.UserDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -19,6 +21,8 @@ import java.util.List;
 @RefreshScope
 public class TestController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestController.class);
+
     @Autowired
     private ShareMapper shareMapper;
 
@@ -29,7 +33,8 @@ public class TestController {
     private String scutLocation;
 
     @GetMapping("/location")
-    public String scutLocation() {
+    public String location() {
+        LOGGER.info("/location invoked");
         return this.scutLocation;
     }
 
@@ -38,12 +43,15 @@ public class TestController {
 
     @GetMapping("/test-config")
     public String scutConfig() {
+        LOGGER.info("/test-config invoked");
         return this.scutConfig;
     }
 
     @RequestMapping("/test")
     public List<Share> test()
     {
+        LOGGER.info("/test invoked");
+
         Share share = new Share();
         share.setCreateTime(new Date());
         share.setUpdateTime(new Date());
@@ -61,6 +69,8 @@ public class TestController {
 
     @GetMapping("/test-rest-template/{userId}")
     public UserDTO test(@PathVariable Integer userId) {
+        LOGGER.info("/est-rest-template invoked");
+
         return this.restTemplate
                 .getForObject(
                         "http://user-center/users/{userId}",

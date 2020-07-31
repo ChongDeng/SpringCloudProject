@@ -2,6 +2,8 @@ package com.avistar.user.controller.user;
 
 import com.avistar.user.dao.user.UserMapper;
 import com.avistar.user.domain.entity.user.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -15,6 +17,8 @@ import java.util.Date;
 @RefreshScope
 public class TestController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestController.class);
+
     @Autowired
     private UserMapper userMapper;
 
@@ -23,6 +27,7 @@ public class TestController {
 
     @GetMapping("/location")
     public String scutLocation() {
+        LOGGER.info("/location invoked");
         return this.scutLocation;
     }
 
@@ -31,12 +36,14 @@ public class TestController {
 
     @GetMapping("/ext")
     public String ext() {
+        LOGGER.info("/ext invoked");
         return this.ext;
     }
 
     @RequestMapping("/test")
     public User test()
     {
+        LOGGER.info("/test invoked");
         User user = new User();
         user.setAvatarUrl("YYY");
         user.setBonus(200);
