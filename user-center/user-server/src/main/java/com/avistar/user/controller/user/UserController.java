@@ -5,9 +5,11 @@ import com.avistar.auth.JwtOperator;
 import com.avistar.user.domain.entity.user.User;
 import com.avistar.user.dto.JwtTokenRespDTO;
 import com.avistar.user.dto.LoginRespDTO;
-import com.avistar.user.dto.UserLoginDTO;
+import com.avistar.user.bo.UserLoginBO;
 import com.avistar.user.dto.UserRespDTO;
 import com.avistar.user.service.user.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -22,6 +24,7 @@ import java.util.Map;
 @RequestMapping("/users")
 @Slf4j
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@Api(value = "用户操作 API")
 public class UserController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
@@ -31,6 +34,12 @@ public class UserController {
 
     private final JwtOperator jwtOperator;
 
+    @ApiOperation(
+            value = "查询id",
+            notes = "根据参数来构建",
+            produces="application/json",
+            consumes="application/json",
+            response = User.class)
     @GetMapping("/{id}")
     @CheckLogin
     public User findById(@PathVariable Integer id) {
@@ -39,14 +48,20 @@ public class UserController {
         return userService.findById(id);
     }
 
+    @ApiOperation(
+            value = "登录",
+            notes = "根据参数来构建",
+            produces="application/json",
+            consumes="application/json",
+            response = LoginRespDTO.class)
     @PostMapping("/login")
-    public LoginRespDTO login(@RequestBody UserLoginDTO loginDTO) {
+    public LoginRespDTO login(@RequestBody UserLoginBO userLoginBO) {
 
         LOGGER.info("/login invoked");
 
         // 看用户是否注册，如果没有注册就（插入）
         // 如果已经注册
-        User user = this.userService.login(loginDTO);
+        User user = this.userService.login(userLoginBO);
 
         // 颁发token
         Map<String, Object> userInfo = new HashMap<>(3);
@@ -58,7 +73,7 @@ public class UserController {
 
         log.info(
                 "用户{}登录成功，生成的token = {}, 有效期到:{}",
-                loginDTO.getWxNickname(),
+                userLoginBO.getWxNickname(),
                 token,
                 jwtOperator.getExpirationTime()
         );
@@ -85,6 +100,12 @@ public class UserController {
     /**
      * 模拟生成token(假的登录)
      */
+    @ApiOperation(
+            value = "模拟生成token",
+            notes = "根据参数来构建",
+            produces="application/json",
+            consumes="application/json",
+            response = LoginRespDTO.class)
     @GetMapping("/genToken")
     public String genToken() {
         LOGGER.info("/genToken invoked");

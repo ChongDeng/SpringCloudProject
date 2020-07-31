@@ -1,11 +1,11 @@
-package com.avistar.user.dto;
+package com.avistar.user.bo;
 
 import lombok.Builder;
 import lombok.Data;
 
 @Builder
 @Data
-public class UserLoginDTO {
+public class UserLoginBO {
 
     private String name;
 

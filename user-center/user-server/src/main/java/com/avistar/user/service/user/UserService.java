@@ -2,7 +2,7 @@ package com.avistar.user.service.user;
 
 import com.avistar.user.dao.user.UserMapper;
 import com.avistar.user.domain.entity.user.User;
-import com.avistar.user.dto.UserLoginDTO;
+import com.avistar.user.bo.UserLoginBO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class UserService {
         return userMapper.selectByPrimaryKey(id);
     }
 
-    public User login(UserLoginDTO loginDTO){
+    public User login(UserLoginBO loginDTO){
 
         User user = this.userMapper.selectOne(
                 User.builder()
