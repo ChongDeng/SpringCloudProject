@@ -48,7 +48,7 @@ ribbon:
 
 user-center:
   ribbon:
-    NFLoadBalancerRuleClassName: com.avistar.content.configuration.NacosWeightedRule
+    NFLoadBalancerRuleClassName: com.avistar.content.config.NacosWeightedRule
 
 
 logging:
