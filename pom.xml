@@ -8,7 +8,11 @@
         <module>content-center</module>
 		<module>gateway</module>
         <module>admin</module>
-    </modules>
+		<module>provider-center</module>
+		<module>consumer-center</module>
+        <module>common</module>
+		<module>auth-center</module>
+	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
