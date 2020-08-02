@@ -1,10 +1,12 @@
 server:
   port: 8081
 
+logging.level.com.alibaba.nacos.client.naming: WARN
+
 ---
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/user-center?serverTimezone=UTC
+    url: jdbc:mysql://64.62.166.177:3206/user-center?serverTimezone=UTC
     hikari:
       username: root
       password: root
